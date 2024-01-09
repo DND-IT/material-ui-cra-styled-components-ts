@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import ProTip from "./ProTip";
+import { Button, styled } from "@mui/material";
 
 function Copyright() {
   return (
@@ -17,6 +18,14 @@ function Copyright() {
   );
 }
 
+type StyledButtonProps = {
+  position: React.CSSProperties["position"];
+};
+
+const StyledButton = styled(Button)<StyledButtonProps>`
+  position: ${({ position }) => position};
+`;
+
 export default function App() {
   return (
     <Container maxWidth="sm">
@@ -25,6 +34,7 @@ export default function App() {
           Material UI Create React App example with styled-components in
           TypeScript
         </Typography>
+        <StyledButton>My styled button</StyledButton>
         <ProTip />
         <Copyright />
       </Box>
